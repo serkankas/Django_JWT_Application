@@ -19,7 +19,7 @@ Hello, I create simple backend for JWT application with, Terminal UI. It's simpl
 
 Able to start program.
 ```console
-$ python test_w_gui.py
+$ python test/test_w_gui.py
 ```
 
 When you entered the program, you can try based on your purpose. If you try to call __option 3, 4 or 5__, you'll not be able to. Since the credential doesn't set at the first stage. You will get 401 probably. Enter the Option 1 for logged in. The three pre-generated credentials are given at below. Try them with your wish.
@@ -40,7 +40,7 @@ I didn't call refreshing token in every usage of __option_3__. However, I thinks
 $ virtualenv -p python3 venv
 $ source venv/bin/activate
 (venv)$ pip install -r requirements.txt
-(venv)$ python manage.py runserver
+(venv)$ python jwt_test/manage.py runserver
 ```
 
 > Configuration for test_terminal.
