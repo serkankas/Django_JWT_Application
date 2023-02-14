@@ -33,9 +33,9 @@ def general_interface():
 			option = print_login()
 		else:
 			option = print_logout()
-		if option < 1 or option > 6:
+		if option < 1 or option > 7:
 			print_wrong_option_selected()
-		elif option == 6:
+		elif option == 7:
 			exit_status = 0
 			print(f"{_COLOR['Red']}Exitted{_COLOR['End']} Successfully.")
 		else:
@@ -84,6 +84,14 @@ def general_interface():
 					access_token = response_dict['access']
 					refresh_token = response_dict['refresh']
 					print(f"Tokens Are {_COLOR['Yellow']}Setted{_COLOR['End']}")
+			elif option == 6:
+				resp = requests.get(f"{web_url}/api/test_api_perm/", headers={"Authorization": f"Bearer {access_token}"})
+				status = resp.status_code
+				print(f"{_CONTENT_SEPERATOR}\nResponse status: \t{status}")
+				response_dict = json.loads(resp.text)
+				for i in response_dict:
+					print(f"{i} :\t\t{response_dict[i]}")
+
 
 def print_login():
 	print(f"""{_CONTENT_SEPERATOR}
@@ -92,7 +100,8 @@ def print_login():
 	3. {_COLOR['Blue']}Call API{_COLOR['End']} with {_COLOR['Purple']}Authentication {_COLOR['End']}
 	4. {_COLOR['Blue']}Refresh Token{_COLOR['End']}
 	5. {_COLOR['Blue']}Get Token{_COLOR['End']}
-	6. {_COLOR['Red']}Exit{_COLOR['End']}
+	6. {_COLOR['Blue']}Call API{_COLOR['End']} with {_COLOR['Purple']}Permission {_COLOR['End']}
+	7. {_COLOR['Red']}Exit{_COLOR['End']}
 {_CONTENT_SEPERATOR}""")
 	
 	try :
@@ -106,7 +115,8 @@ def print_logout():
 	3. {_COLOR['Blue']}Call API{_COLOR['End']} with {_COLOR['Purple']}Authentication {_COLOR['End']}
 	4. {_COLOR['Blue']}Refresh Token{_COLOR['End']}
 	5. {_COLOR['Blue']}Get Token{_COLOR['End']}
-	6. {_COLOR['Red']}Exit{_COLOR['End']}
+	6. {_COLOR['Blue']}Call API{_COLOR['End']} with {_COLOR['Purple']}Permission {_COLOR['End']}
+	7. {_COLOR['Red']}Exit{_COLOR['End']}
 {_CONTENT_SEPERATOR}""")
 	
 	try :
