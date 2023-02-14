@@ -15,6 +15,7 @@ Hello, I create simple backend for JWT application with, Terminal UI. It's simpl
 | Call API with Authentication | This is an API controlled if it's authenticated or not. You may got 401 Unauthorized application or 500/404 depends on your backend works or not.
 | Refresh Token | The JWT works with two different token section. Access and Refresh token. If the tokens need refresh, you can press this option.
 | Get Token | Initially, when you logged in the tokens are not captured. However, after logged in. You press this option to set your tokens. To make access the option 3 and 4
+| Call API with Permission | This API called and it's gives 200 if either admin or editor user. Normal user cannot perform, which will return 401
 | Exit | Closes the program.
 
 Able to start program.
