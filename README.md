@@ -11,10 +11,13 @@ Hello, I create simple backend for JWT application with, Terminal UI. It's simpl
 |Option|Usage
 |---|---
 | Log In/Out |Either Log in or Out with option 1. The credential is given at below, credential section.
+| Get Token | Initially, when you logged in the tokens are not captured. However, after logged in. You press this option to set your tokens.
+| Refresh Token | The JWT works with two different token section. Access and Refresh token. If the tokens need refresh, you can press this option.
+| Create User| This application can be perform in either editor or admin users. If passwords are not matching, that has been controlled in the backend.
+| Delete User| This application can be perform with only admin user. In backend, we can delete user by its username. Since it has to be unique anyway.
+| Change user Group | When we create user, it's automatically setted as normaluser. You can change to editor using this section. This application can be perform with both editor and admin. But not with normal user.
 | Call API | This API doesn't require authentication. Just to check if you're able to call the api from backend.
 | Call API with Authentication | This is an API controlled if it's authenticated or not. You may got 401 Unauthorized application or 500/404 depends on your backend works or not.
-| Refresh Token | The JWT works with two different token section. Access and Refresh token. If the tokens need refresh, you can press this option.
-| Get Token | Initially, when you logged in the tokens are not captured. However, after logged in. You press this option to set your tokens. To make access the option 3 and 4
 | Call API with Permission | This API called and it's gives 200 if either admin or editor user. Normal user cannot perform, which will return 401
 | Exit | Closes the program.
 
