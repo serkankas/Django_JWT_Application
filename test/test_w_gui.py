@@ -1,5 +1,6 @@
 # Libraries
 import requests
+from requests.exceptions import ConnectionError
 import json
 
 # Globals
@@ -15,7 +16,7 @@ web_url = "http://127.0.0.1:8000"
 username = ""
 password = ""
 
-_CONTENT_SEPERATOR = "*********************************"
+_CONTENT_SEPERATOR = "******************************************************************"
 
 # Functions
 def general_interface():
@@ -183,4 +184,10 @@ def get_group():
 
 # Main
 if __name__ == '__main__':
-	general_interface()
+	try:
+		general_interface()
+	except ConnectionError:
+		print(f"""{_CONTENT_SEPERATOR}
+The server has {_COLOR['Red']}Connection{_COLOR['End']} issiue
+Please control your backend if it's {_COLOR['Green']}Working{_COLOR['End']} properly.
+{_CONTENT_SEPERATOR}""")
